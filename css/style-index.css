@@ -169,8 +169,23 @@ footer {
         grid-column: span 1;
         grid-row: span 1;
     }
-}
+/* Ajuste para celulares/tables */
+    header {
+        grid-template-columns: 1fr; 
+        text-align: center;        
+        row-gap: 20px;            
+    }
 
+    .fotoperfil {
+        justify-self: center;     
+        margin: 0;                
+    }
+
+    .descripcion-header {
+        
+        text-align: left;
+    }
+}
 /* Animación de carga de banner inicial*/
 /* Pantalla de inicio que cubre todo */
 #pantalla-inicio {

@@ -4,10 +4,12 @@ function entrar() {
     if (banner) { // Una buena práctica: verificar que el elemento existe antes de actuar
         banner.classList.add('oculto');
         
-        // Esperamos los 0.8s de la transición CSS para quitarlo del flujo
-        setTimeout(() => {
+        // Escuchamos el evento 'transitionend' para quitar el banner del DOM
+        // solo después de que la animación de CSS haya terminado.
+        // El { once: true } hace que el listener se elimine solo después de ejecutarse una vez.
+        banner.addEventListener('transitionend', () => {
             banner.style.display = 'none';
-        }, 800);
+        }, { once: true });
     }
 }
 
